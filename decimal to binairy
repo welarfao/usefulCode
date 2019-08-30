@@ -1,0 +1,37 @@
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main()
+{
+    int input;
+    vector<int> binairy;
+    while(1){
+        cout<< "PLEASE  input :  ";
+        cin>>input;
+        int ret = 0 , res = 0, multi = 1;
+        while(input>1){
+            res = input%2;
+            binairy.push_back(res);
+            input = (input-res)/2;
+        }
+        binairy.push_back(input);
+        for(int i ; i< binairy.size();i++){
+            ret += binairy[i]*multi;
+            multi *= 10;
+        }
+    
+        cout<<ret<<endl;
+    }
+
+    return 0;
+}
